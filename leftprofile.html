@@ -1,0 +1,23 @@
+<!--Left Sidebar with info Profile -->
+
+<div ng-app="myApp" ng-controller="myProfile" class="sidebar-nav">
+    <a href="personal-profile.html" title="Profile">
+        <img ng-src="{{user.image}}" alt="User name" class="img-circle img-user">
+    </a>
+    <h2 class="text-center hidden-xs"><a href="personal-profile.html" title="Profile">{{user.username}}</a></h2>
+    <p class="text-center user-description hidden-xs">
+        <i>{{user.description}}</i>
+    </p>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 data-post">
+
+            <div class="comments">
+                <div class="more-comments">New Photo</div>
+
+                <form>
+                    <input type="text" class="form-control" placeholder="Select Photo">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whatsgram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" type="text/css">
+    <script src="lib/jquery-3.2.0.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-switch/css/bootstrap-switch.min.css">
+    <script src="lib/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <script src="https://twemoji.maxcdn.com/twemoji.min.js"></script>
+    <script src="js/lazy-load.min.js"></script>
+    <script src="js/socialyte.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body ng-app="myApp" ng-controller="userProfile" id="user">
+
+<div ng-include="'header.html'"></div>
+
+<div ng-include="'leftprofile.html'"></div>
+
+
+<div class="content-posts profile-content">
+    <div class="banner-profile" style="background-image: url(http://image1.thegioitre.vn/2017/04/05/kul_news_luu-diec-phi-2.jpg)">
+    </div>
+    <!-- Tab Panel -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#posts" role="tab" id="postsTab" data-toggle="tab" aria-controls="posts" aria-expanded="true">Last posts</a></li>
+        <li><a href="#profile" role="tab" id="profileTab" data-toggle="tab" aria-controls="profile" aria-expanded="true">Profile</a></li>
+
+    </ul>
+
+    <!--Start Tab Content-->
+    <div class="tab-content">
+
+        <!-- Tab Posts -->
+        <div class="tab-pane fade active in" role="tabpanel" id="posts" aria-labelledby="postsTab">
+            <div id="posts-container" class="container-fluid container-posts">
+
+                <div class="card-post" ng-repeat="post in posts">
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-2">
+                            <a ng-href="user-profile.html?uid={{post.userID}}" title="Profile">
+                                <img ng-src="{{user.image}}" alt="User Name" class="img-circle img-user">
+                            </a>
+                        </div>
+                        <div class="col-xs-9 col-sm-10 info-user">
+                            <h3><a ng-href="user-profile.html?uid={{post.userID}}" title="Profile">{{post.user}}</a></h3>
+                            <p><i>{{post.time}}</i></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class=" col-sm-8 col-sm-offset-2 data-post">
+                            <p>{{post.caption}}</p>
+                            <img ng-src="{{post.image}}" alt="image post" class="img-post">
+                            <div class="reaction">
+                                &#x2764; {{post.like}}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div id="loading">
+                <img src="img/load.gif" alt="loader">
+            </div>
+        </div><!-- end Tab Posts -->
+
+        <!--Start Tab Profile-->
+        <div class="tab-pane fade" role="tabpanel" id="profile" aria-labelledby="profileTab">
+            <div class="container-fluid container-posts">
+                <div class="card-post">
+                    <ul class="profile-data">
+                        <li><b>Username:</b> {{user.username}}</li>
+                        <li><b>Age:</b> {{user.age}}</li>
+                        <li><b>Hobbies:</b> {{user.hobbies}}</li>
+                        <li><b>Studies:</b> {{user.studies}}</li>
+                        <li><b>Job:</b> {{user.job}}</li>
+                        <li><b>Description:</b> {{user.description}}</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div><!-- end tab Profile -->
+
+
+
+    </div><!-- Close Tab Content-->
+
+</div><!--Close content posts-->
+
+    <!-- Modal container for settings--->
+    <div id="settingsmodal" class="modal fade text-center">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+</body>

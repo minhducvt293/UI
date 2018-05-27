@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whatsgram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" type="text/css">
+    <script src="lib/jquery-3.2.0.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-switch/css/bootstrap-switch.min.css">
+    <script src="lib/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <script src="https://twemoji.maxcdn.com/twemoji.min.js"></script>
+    <script src="js/lazy-load.min.js"></script>
+    <script src="js/socialyte.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body id="wall">
+
+<div ng-include="'header.html'"></div>
+
+    <!--Left Sidebar with info Profile -->
+    <div class="sidebar-nav">
+        <h2 class="text-center hidden-xs">Search Profile</h2>
+        <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 data-post">
+                       
+                        <div class="comments">
+                            
+                            <form>
+                                <input type="text" class="form-control" placeholder="Search Profile">
+                            </form>
+                        </div>
+                    </div>
+        </div>
+		<h2 class="text-center hidden-xs">Search Photo</h2>
+		<div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 data-post">
+                       
+                        <div class="comments">
+                            
+                            <form>
+                                <input type="text" class="form-control" placeholder="Search Photo">
+                            </form>
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+    <!--Wall with Post -->
+    <div class="content-posts active" id="posts">
+        <div id="posts-container" class="container-fluid container-posts">
+
+            <div class="card-post">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="personal-profile.html" title="Profile">
+                            <img src="img/ductra.jpg" alt="User name" class="img-circle img-user">
+                        </a>
+                    </div>
+                    <div class="col-xs-9 col-sm-10 info-user">
+                        <h3><a href="personal-profile.html" title="Profile">Duc Tran</a></h3>
+                        <p><i>Some Information Here</i></p>
+						<button type="button" class="btn btn-primary">Follow</button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="card-post">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="personal-profile.html" title="Profile">
+                            <img src="img/manhpham.jpg" alt="User name" class="img-circle img-user">
+                        </a>
+                    </div>
+                    <div class="col-xs-9 col-sm-10 info-user">
+                        <h3><a href="personal-profile.html" title="Profile">Manh Pham</a></h3>
+                        <p><i>Some Information Here</i></p>
+						<button type="button" class="btn btn-primary">Follow</button>
+                    </div>
+                </div>
+                
+            </div>
+			
+			<div class="card-post">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-2">
+                        <a href="personal-profile.html" title="Profile">
+                            <img src="img/luudiecphi.jpg" alt="User name" class="img-circle img-user">
+                        </a>
+                    </div>
+                    <div class="col-xs-9 col-sm-10 info-user">
+                        <h3><a href="personal-profile.html" title="Profile">Luu Diec Phi</a></h3>
+                        <p><i>Some Information Here</i></p>
+						<button type="button" class="btn btn-primary">Follow</button>
+                    </div>
+                </div>
+                
+            </div>
+
+            
+        </div>
+        <!--Close #posts-container-->
+        <div id="loading">
+            <img src="img/load.gif" alt="loader">
+        </div>
+    </div>
+    <!-- Close #posts -->
+    <!-- Modal container for settings--->
+    <div id="settingsmodal" class="modal fade text-center">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
