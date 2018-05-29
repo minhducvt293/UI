@@ -99,6 +99,30 @@ myApp.controller('wall', ['$scope', function($scope) {
     ];
 }]);
 
+myApp.controller('search', ['$scope', function($scope) {
+    $scope.results = [
+        {
+            "user" : "Manh Pham",
+            "userimage" : "img/manhphamimg.jpg",
+            "description" : "ABC ABC",
+            "userID" : "2"
+        },
+        {
+            "user" : "Luu Diec Phi",
+            "userimage" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREziIja7NHT0i4YJmngcyjZDdYyhjJbL2s8q3rMKw46F6W1pY4",
+            "description" : "ZYX ZYZ",
+            "userID" : "1"
+        },
+        {
+            "user" : "Manh Pham",
+            "userimage" : "img/manhphamimg.jpg",
+            "description" : "123 1123",
+            "userID" : "2"
+        }
+
+    ];
+}]);
+
 
 
 
