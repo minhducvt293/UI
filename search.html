@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
-<body id="wall">
+<body ng-app="myApp" ng-controller="search" id="wall">
 
 <div ng-include="'header.html'"></div>
 
@@ -56,53 +56,24 @@
     <div class="content-posts active" id="posts">
         <div id="posts-container" class="container-fluid container-posts">
 
-            <div class="card-post">
+
+            <div class="card-post" ng-repeat="result in results">
                 <div class="row">
                     <div class="col-xs-3 col-sm-2">
-                        <a href="personal-profile.html" title="Profile">
-                            <img src="img/ductra.jpg" alt="User name" class="img-circle img-user">
+                        <a ng-href="user-profile.html?uid={{result.userID}}" title="Profile">
+                            <img ng-src="{{result.userimage}}" alt="User Name" class="img-circle img-user">
                         </a>
                     </div>
                     <div class="col-xs-9 col-sm-10 info-user">
-                        <h3><a href="personal-profile.html" title="Profile">Duc Tran</a></h3>
-                        <p><i>Some Information Here</i></p>
-						<button type="button" class="btn btn-primary">Follow</button>
+                        <h3><a ng-href="user-profile.html?uid={{result.userID}}" title="Profile">{{result.user}}</a></h3>
+                        <p><i>{{result.description}}</i></p>
+                        <button type="button" class="btn btn-primary">Follow</button>
                     </div>
                 </div>
-                
+
             </div>
 
-            <div class="card-post">
-                <div class="row">
-                    <div class="col-xs-3 col-sm-2">
-                        <a href="personal-profile.html" title="Profile">
-                            <img src="img/manhpham.jpg" alt="User name" class="img-circle img-user">
-                        </a>
-                    </div>
-                    <div class="col-xs-9 col-sm-10 info-user">
-                        <h3><a href="personal-profile.html" title="Profile">Manh Pham</a></h3>
-                        <p><i>Some Information Here</i></p>
-						<button type="button" class="btn btn-primary">Follow</button>
-                    </div>
-                </div>
-                
-            </div>
-			
-			<div class="card-post">
-                <div class="row">
-                    <div class="col-xs-3 col-sm-2">
-                        <a href="personal-profile.html" title="Profile">
-                            <img src="img/luudiecphi.jpg" alt="User name" class="img-circle img-user">
-                        </a>
-                    </div>
-                    <div class="col-xs-9 col-sm-10 info-user">
-                        <h3><a href="personal-profile.html" title="Profile">Luu Diec Phi</a></h3>
-                        <p><i>Some Information Here</i></p>
-						<button type="button" class="btn btn-primary">Follow</button>
-                    </div>
-                </div>
-                
-            </div>
+
 
             
         </div>
